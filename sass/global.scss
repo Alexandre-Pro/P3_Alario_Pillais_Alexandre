@@ -1,0 +1,149 @@
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+@mixin button {
+    border: 0rem;
+    padding: 1rem 1rem;
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: 100px;
+    color: #ffffff;
+    background-color: $color-primary;
+    box-shadow: 0.25rem 0.25rem 10px #9c9c9c;
+}
+
+@mixin buttonlike {
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+    border: transparent 0px solid;
+    padding: 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+@mixin like {
+    transition-duration: 0.25s;
+        background-color: #f7f7f7;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        mix-blend-mode: lighten;
+}
+
+@mixin textover {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+body, html {
+    margin: 0;
+    font-family: 'roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    padding: 1rem 1rem;
+    box-shadow: 0rem 0rem 0.5rem #979797;
+    position: relative;
+    z-index: 1000;
+
+    &__logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.container {
+    margin: auto;
+    position: relative;
+    padding: 1rem;
+  }
+
+.footer {
+    background-color: #353535;
+
+    &__logo {
+        font-family: "Shrikhand";
+        color: #ffffff;
+        margin: 0rem 0rem 1rem 0rem;
+        font-size: 1.5rem;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0rem;
+        margin: 0rem;
+    }
+
+    &__link {
+        color: #ffffff;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    } 
+    
+    &__icon {
+        width: 1.2rem;
+        margin-right: 0.5rem;
+    }
+
+    &__listElem {
+        margin-top: 0.5rem;
+    }
+}
+
+.loader {
+    display: flex;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background-color: rgba(255, 255, 255, 0.90);
+    align-items: center;
+    justify-content: center;
+    animation: animLoader 0.01s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    
+    &__items {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border: 8px solid $color-primary;
+        border-radius: 50%;
+        animation: animItem 1.2s cubic-bezier(0.5,0,0.5,1) 1;
+        border-color: $color-primary transparent transparent transparent;
+
+        &:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        &:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+    }
+}
